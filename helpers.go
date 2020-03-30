@@ -759,6 +759,10 @@ func NewInlineKeyboardMarkup(rows ...[]InlineKeyboardButton) InlineKeyboardMarku
 
 	keyboard = append(keyboard, rows...)
 
+	if keyboard == nil {
+		keyboard = make([][]InlineKeyboardButton, 1)
+	}
+
 	return InlineKeyboardMarkup{
 		InlineKeyboard: keyboard,
 	}
